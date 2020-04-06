@@ -29,7 +29,7 @@ def parse_args():
 
 
 args = parse_args()
-print(args)
+print("Args:", args)
 img = Image.open("input-new.png-1.png")
 img_array = np.array(img)
 img_array[300:330, 250:] = 255
@@ -64,7 +64,6 @@ img_array[1442:1453, 948:1078] = 255
 img_array[1217:1430, 800:1100] = 255
 
 img = Image.fromarray(img_array)
-img.save("input.png")
 
 
 # Create crosses:
@@ -107,7 +106,6 @@ qr_text = f"Cree le: {datetime.datetime.now().strftime('%d/%m/%Y a %H:%M')};" \
 qr = qrcode.make(qr_text, border=0)
 qr = qr.resize((200, 200))
 qr = np.array(qr).astype(np.uint8) * 255
-print("qr shape", qr.shape)
 qr = qr.repeat(3).reshape(qr.shape[0], qr.shape[1], -1)
 # img_array = np.array(img)
 img_array[1228:1428, 890:1090] = np.array(qr)
@@ -139,7 +137,6 @@ qr = Image.fromarray(qr)
 qr = qr.resize((qr.size[0] * 3, qr.size[1] * 3))
 qr = np.array(qr)
 img[113:113 + qr.shape[0], 113:113 + qr.shape[1]] = qr
-Image.fromarray(img).save('output-2.png')
 plt.imsave("output-2.pdf", img, format="pdf")
 
 # --------------------
