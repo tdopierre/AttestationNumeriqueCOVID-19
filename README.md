@@ -23,3 +23,5 @@ python3 -m virtualenv .venv --python=/usr/bin/python3
 	--leave-hour 15:00 \
 	--motifs travail-courses-sante-famille-sport-judiciaire-missions
 ```
+
+L'attestation est ensuite disponible dans le fichier `output.pdf`.

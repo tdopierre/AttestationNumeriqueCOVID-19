@@ -30,8 +30,15 @@ def parse_args():
 
 args = parse_args()
 print("Args:", args)
+
+# ---------------------------
+#  First Page (All fields to fill)
+# ---------------------------
+
 img = Image.open("input-page1.png")
 img_array = np.array(img)
+
+# Erase fields
 img_array[300:330, 250:] = 255
 img_array[355:390, 250:] = 255
 img_array[400:430, 185:] = 255
