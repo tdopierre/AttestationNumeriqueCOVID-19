@@ -12,7 +12,7 @@ python3 -m virtualenv .venv --python=/usr/bin/python3
 
 ## Utilisation
 ```bash
-python main.py \
+.venv/bin/python main.py \
 	--first-name John \
 	--last-name Doe \
 	--birth-date 01/01/1900 \

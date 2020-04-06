@@ -30,7 +30,7 @@ def parse_args():
 
 args = parse_args()
 print("Args:", args)
-img = Image.open("input-new.png-1.png")
+img = Image.open("input-page1.png")
 img_array = np.array(img)
 img_array[300:330, 250:] = 255
 img_array[355:390, 250:] = 255
@@ -131,7 +131,7 @@ plt.imsave("output-1.pdf", np.array(img), format="pdf")
 # ---------------------------
 #  Second Page (Big QR code)
 # ---------------------------
-img = np.array(Image.open('input-new.png-2.png'))
+img = np.array(Image.open('input-page2.png'))
 img[:] = 255
 qr = Image.fromarray(qr)
 qr = qr.resize((qr.size[0] * 3, qr.size[1] * 3))
